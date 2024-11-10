@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="color: beige; background-color: black;">
+  <button class="button-33" role="button" onclick="window.location.href='/';">Go Home</button>
+
+  <select id="pathSelector">
+    <option value="0">Alya-san</option>
+    <option value="1">Futab</option>
+    <option value="2">Bowsette</option>
+    <option value="3">ヨガ</option>
+  </select>
+
+  <button onclick="loadImages()">Load Images</button>
+  <h1>Image Gallery</h1>
+  <div id="gallery"></div>
+  <script src="gallery.js" defer></script>
+
+</body>
+
+</html>
