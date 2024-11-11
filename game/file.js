@@ -3,13 +3,17 @@ import { create_grid } from "./game.js";
 export function processBitmap(sta, bitmap) {
   const bmpWidth = bitmap.width;
   const bmpHeight = bitmap.height;
+
   sta.vals.rows = bmpHeight;
   sta.vals.cols = bmpWidth;
+
   sta.grid = (0, create_grid)(sta.vals.rows, sta.vals.cols);
   sta.def_grid = (0, create_grid)(sta.vals.rows, sta.vals.cols);
   sta.tracegrid = (0, create_grid)(sta.vals.rows, sta.vals.cols);
+
   sta.canvas.width = sta.vals.cols * sta.vals.cell_size;
   sta.canvas.height = sta.vals.rows * sta.vals.cell_size;
+
   for (let y = 0; y < bmpHeight; y++) {
     for (let x = 0; x < bmpWidth; x++) {
       const index = (y * bmpWidth + x) * 4;

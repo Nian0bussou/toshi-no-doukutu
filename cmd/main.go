@@ -10,14 +10,12 @@ import (
 	"wcmd/gallery"
 	"wcmd/gameof"
 	"wcmd/home"
-	"wcmd/serveicon"
 )
 
 func main() {
-	home.Home()       // on ./
-	gallery.Gallery() // on ./gal
-	serveicon.Icon()  // on ./favicon
-	gameof.Game()     // on ./game
+	home.Home()       // on .../
+	gallery.Gallery() // on .../gal
+	gameof.Game()     // on .../game
 
 	http.HandleFunc("/save", saveHandler)
 	http.HandleFunc("/load", loadHandler)

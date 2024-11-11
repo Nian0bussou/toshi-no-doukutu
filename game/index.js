@@ -49,7 +49,6 @@ elems.file_input.addEventListener("change", function (event) {
       tempCanvas.height = img.height;
 
       tempCtx.drawImage(img, 0, 0);
-      j;
       const imageData = tempCtx.getImageData(0, 0, img.width, img.height);
 
       sta = processBitmap(sta, imageData);

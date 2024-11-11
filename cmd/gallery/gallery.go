@@ -6,6 +6,7 @@ import (
 	"os"
 	"path/filepath"
 	"strconv"
+	"wcmd/ip"
 )
 
 const (
@@ -19,10 +20,11 @@ var (
 // TODO: add more path? ...
 var (
 	paths = [...]string{
-		"alya-san",
-		"futab",
-		"bowsette",
-		"yoga",
+		"ahri",
+		"bonten",
+		"demontail",
+		"elf",
+		"chen",
 	}
 )
 
@@ -35,6 +37,7 @@ func Gallery() {
 }
 
 func gal(w http.ResponseWriter, r *http.Request) {
+	ip.GetIP(r)
 	// Get 'path' query parameter (index of folder)
 	pathIndexStr := r.URL.Query().Get("path")
 	pathIndex, err := strconv.Atoi(pathIndexStr)

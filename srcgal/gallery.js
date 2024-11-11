@@ -17,7 +17,7 @@ async function loadImages() {
 
     gallery.innerHTML = "";
 
-    images.forEach(imageUrl => {
+    images.forEach((imageUrl) => {
       const link = document.createElement("a");
       link.href = imageUrl;
       link.target = "_blank";
@@ -28,7 +28,6 @@ async function loadImages() {
 
       link.appendChild(img);
       gallery.appendChild(link);
-
     });
   } catch (error) {
     console.error("Error loading images:", error);
