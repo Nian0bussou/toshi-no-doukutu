@@ -3,7 +3,7 @@ import { processBitmap } from "./file.js";
 import { init } from "./initial.js";
 
 const elems = init();
-let sta = (0, create_empty_state)(
+let sta = create_empty_state(
   {
     is_paused: false,
     has_file: false,
@@ -16,8 +16,10 @@ let sta = (0, create_empty_state)(
   },
   elems
 );
+
 sta.canvas.width = sta.vals.cols * sta.vals.cell_size;
 sta.canvas.height = sta.vals.rows * sta.vals.cell_size;
+
 elems.len_tail.addEventListener(
   "change",
   () => (sta.vals.tail_length = Number(elems.len_tail.value))
@@ -66,8 +68,8 @@ let animationFrameId;
 
 function gameLoop() {
   if (isFocused && sta.vals.has_file) {
-    (0, draw)(sta);
-    if (!sta.vals.is_paused) sta = (0, update)(sta);
+    draw(sta);
+    if (!sta.vals.is_paused) sta = update(sta);
   }
   animationFrameId = requestAnimationFrame(gameLoop);
 }

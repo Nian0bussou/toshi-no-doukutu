@@ -5,7 +5,8 @@ async function loadImages() {
     const response = await fetch(`/api/images?path=${pathIndex}`);
 
     if (!response.ok) {
-      throw new Error("Failed to load images");
+      console.log("Invalid path selected")
+      window.location.href = '/'
     }
 
     const images = await response.json();

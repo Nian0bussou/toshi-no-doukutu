@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -33,6 +34,7 @@ type RequestBody struct {
 }
 
 func saveHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("INFO: home; file was save")
 	if r.Method != "POST" {
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 		return
@@ -58,6 +60,7 @@ func saveHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func loadHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("INFO: home; file was loaded")
 	if r.Method != "GET" {
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 		return
