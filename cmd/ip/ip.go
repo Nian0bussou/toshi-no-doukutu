@@ -6,16 +6,18 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"time"
 	"wcmd/assert"
 )
 
 func GetIP(r *http.Request) {
-	ip_str := getIP(r)
+	ips := getIP(r)
+	ip_str := time.Now().String() + ips
 	fmt.Printf("IP : {%s}\n", ip_str)
 	noteIp("./ips.txt", ip_str)
 
 	// no idea how to test this
-	assert.Assert(ip_str == "::1", "Some other parties tried to connect to the server (try looking into your firewall...)")
+	assert.Assert(ips == "::1" || ips == "127.0.0.1", "Some other parties tried to connect to the server (try looking into your firewall...)")
 }
 
 func getIP(r *http.Request) string {
@@ -44,19 +46,13 @@ func getIP(r *http.Request) string {
 	return ip
 }
 
-func noteIp(filename string, text string) error {
-	// Open the file in append mode, create it if it doesn't exist, with write permissions
+func noteIp(filename string, text string) {
 	file, err := os.OpenFile(filename, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-	if err != nil {
-		return err
-	}
+
+	assert.NoError(err, "cant open file")
 	defer file.Close()
 
 	// Write the text to the file
 	_, err = file.WriteString(text + "\n")
-	if err != nil {
-		return err
-	}
-
-	return nil
+	assert.NoError(err, "cant write to file")
 }

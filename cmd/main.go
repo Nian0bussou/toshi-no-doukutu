@@ -14,9 +14,9 @@ import (
 )
 
 func main() {
-	home.Home()       // on .../
-	gallery.Gallery() // on .../gal
-	gameof.Game()     // on .../game
+	home.Home()                          // on .../
+	gallery.Gallery("images_paths.json") // on .../gal
+	gameof.Game()                        // on .../game
 
 	http.HandleFunc("/save", saveHandler)
 	http.HandleFunc("/load", loadHandler)

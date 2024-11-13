@@ -5,8 +5,8 @@ async function loadImages() {
     const response = await fetch(`/api/images?path=${pathIndex}`);
 
     if (!response.ok) {
-      console.log("Invalid path selected")
-      window.location.href = '/'
+      console.log("Invalid path selected");
+      window.location.href = "/";
     }
 
     const images = await response.json();
@@ -36,3 +36,34 @@ async function loadImages() {
 }
 
 document.addEventListener("DOMContentLoaded", loadImages);
+
+//#region  selector
+
+async function populateSelector() {
+  try {
+    // Fetch the JSON data from the server
+    const response = await fetch("/get_paths");
+    const data = await response.json();
+
+    // Reference the select element
+    const selector = document.getElementById("pathSelector");
+
+    // Clear existing options, if any
+    selector.innerHTML = "";
+
+    // Add new options from the JSON data
+    data.forEach((path, index) => {
+      const option = document.createElement("option");
+      option.value = index;
+      option.textContent = path;
+      selector.appendChild(option);
+    });
+  } catch (error) {
+    console.error("Error loading paths:", error);
+  }
+}
+
+// Call the function to populate the selector when the page loads
+window.onload = populateSelector;
+
+//#endregion
