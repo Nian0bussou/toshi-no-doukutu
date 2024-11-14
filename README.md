@@ -4,7 +4,7 @@ Simple personal website made using a go server.
 
 - [ ] learn how git merge works
 
-some change here
+Some change here
 
 # Cmd
 
