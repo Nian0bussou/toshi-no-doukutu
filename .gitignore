@@ -1,2 +1,4 @@
 node_modules/
 srcgal/images/*
+ips.txt
+src/output.txt

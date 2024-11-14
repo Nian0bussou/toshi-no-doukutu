@@ -6,18 +6,20 @@ import (
 	"net/http"
 	"os"
 	"strings"
-	"time"
+
 	"wcmd/assert"
+	"wcmd/gtime"
 )
 
 func GetIP(r *http.Request) {
 	ips := getIP(r)
-	ip_str := time.Now().String() + ips
+	ip_str := gtime.GetTime() + "|" + ips
 	fmt.Printf("IP : {%s}\n", ip_str)
 	noteIp("./ips.txt", ip_str)
 
-	// no idea how to test this
-	assert.Assert(ips == "::1" || ips == "127.0.0.1", "Some other parties tried to connect to the server (try looking into your firewall...)")
+	assert.Assert(ips == "::1" || ips == "127.0.0.1",
+		"Some other parties tried to connect to the server (try looking into your firewall...)",
+		ips)
 }
 
 func getIP(r *http.Request) string {

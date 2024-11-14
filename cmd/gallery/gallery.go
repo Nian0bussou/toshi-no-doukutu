@@ -7,6 +7,7 @@ import (
 	"os"
 	"strconv"
 	"wcmd/assert"
+	"wcmd/gtime"
 	"wcmd/ip"
 )
 
@@ -18,7 +19,6 @@ func parse_imagesJSon(filename string) []string {
 	byteValue, err := os.ReadFile(filename)
 	assert.NoError(err, "cant read file")
 
-	// Unmarshal JSON data into the Data struct
 	var data Data
 	err = json.Unmarshal(byteValue, &data)
 	assert.NoError(err, "failed to parse json")
@@ -27,20 +27,10 @@ func parse_imagesJSon(filename string) []string {
 }
 
 var (
-	galpath     = "./srcgal"
-	baseGalPath = galpath + "/images/"
-	// paths       = [...]string{
-	// 	"ahri",
-	// 	"bonten",
-	// 	"demontail",
-	// 	"elf",
-	// 	"chen",
-	// 	"fav_wall",
-	// 	"mio",
-	// }
+	galpath     string = "./srcgal"
+	baseGalPath string = galpath + "/images/"
+	paths       []string
 )
-
-var paths []string
 
 func Gallery(file string) {
 
@@ -55,7 +45,7 @@ func Gallery(file string) {
 
 func gal(w http.ResponseWriter, r *http.Request) {
 	ip.GetIP(r)
-	fmt.Println("INFO: gallery; was access")
+	fmt.Println(gtime.GetTime(), "INFO: gallery; was access")
 	// Get 'path' query parameter (index of folder)
 	pathIndexStr := r.URL.Query().Get("path")
 	pathIndex, err := strconv.Atoi(pathIndexStr)
@@ -63,7 +53,7 @@ func gal(w http.ResponseWriter, r *http.Request) {
 	if err != nil || pathIndex < 0 || pathIndex >= len(paths) {
 		msg := "Invalid path index"
 		http.Error(w, msg, http.StatusBadRequest)
-		fmt.Println("ERROR: gallery;", msg)
+		fmt.Println(gtime.GetTime(), "ERROR: gallery;", msg)
 		return
 	}
 
@@ -75,7 +65,7 @@ func gal(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		msg := "unable to read img dir"
 		http.Error(w, msg, http.StatusInternalServerError)
-		fmt.Println("ERROR: gallery; ", msg)
+		fmt.Println(gtime.GetTime(), "ERROR: gallery; ", msg)
 		return
 	}
 
@@ -83,7 +73,7 @@ func gal(w http.ResponseWriter, r *http.Request) {
 	for _, file := range files {
 		filename := file.Name()
 		images = append(images, "/gal/images/"+pindex+"/"+filename)
-		fmt.Println("INFO: gallery; loaded :\n", pindex, filename)
+		fmt.Println(gtime.GetTime(), "INFO: gallery; loaded :\n", pindex, filename)
 	}
 
 	// Return JSON list of image paths
