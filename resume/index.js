@@ -1,3 +1,10 @@
+const collapsible0 = document.querySelector('.collapsible0')
+const content0 = document.querySelector('.content0')
+collapsible0.addEventListener('click', () => {
+    content0.classList.toggle('open')
+    console.log('toggle content0')
+})
+
 const collapsible1 = document.querySelector('.collapsible1')
 const content1 = document.querySelector('.content1')
 collapsible1.addEventListener('click', () => {

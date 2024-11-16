@@ -8,6 +8,19 @@ body {
     font-size: 1.1em;
 }
 
+a:link {
+    color: white; /* Unvisited link */
+}
+a:visited {
+    color: beige; /* Visited link */
+}
+a:hover {
+    color: white; /* Hovered link */
+}
+a:active {
+    color: white; /* Active link */
+}
+
 .but_tits {
     font-size: 1.2em;
 }
@@ -31,11 +44,18 @@ body {
     cursor: pointer;
 }
 
+.content0 {
+    display: none;
+    overflow: hidden;
+}
+.content0.open {
+    display: block;
+}
+
 .content1 {
     display: none;
     overflow: hidden;
 }
-
 .content1.open {
     display: block;
 }
@@ -44,7 +64,6 @@ body {
     display: none;
     overflow: hidden;
 }
-
 .content2.open {
     display: block;
 }
@@ -62,15 +81,8 @@ body {
 
 
 
-
-
-
-
-
-
-
-
 */
+
 .zen-maru-gothic-regular {
     font-family: 'Zen Maru Gothic', serif;
     font-weight: 400;
