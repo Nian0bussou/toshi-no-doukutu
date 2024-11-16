@@ -14,7 +14,6 @@ import (
 )
 
 func main() {
-
 	v := flags.GetFlags()
 
 	gallery.Gallery(v.Gallery_path) // on .../gal
