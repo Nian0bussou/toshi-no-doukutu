@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+
 	"wcmd/assert"
 	"wcmd/gtime"
 	"wcmd/ip"
@@ -26,17 +27,14 @@ func parse_imagesJSon(filename string) []string {
 	return data.Paths
 }
 
-var (
-	galpath     string = "./srcgal"
-	baseGalPath string = galpath + "/images/"
-	paths       []string
-)
+const galpath = "./srcgal"
+
+var baseGalPath = galpath + "/images/"
+var paths []string
 
 func Gallery(file string) {
-
 	paths = parse_imagesJSon(file)
 
-	// Serve static files from src
 	fs := http.FileServer(http.Dir(galpath))
 	http.Handle("/gal/", http.StripPrefix("/gal", fs))
 	http.HandleFunc("/get_paths", getPathsHandler)

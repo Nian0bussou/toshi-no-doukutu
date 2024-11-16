@@ -5,21 +5,26 @@ import (
 	"net/http"
 
 	"wcmd/assert"
+	"wcmd/flags"
 	"wcmd/gallery"
 	"wcmd/gameof"
 	"wcmd/gtime"
 	"wcmd/home"
+	"wcmd/ip"
 )
 
 func main() {
 
-	home.Home()                          // on .../
-	gallery.Gallery("images_paths.json") // on .../gal
-	gameof.Game()                        // on .../game
+	v := flags.GetFlags()
 
-	fmt.Println(gtime.GetTime(), "Listening on :8080...")
+	gallery.Gallery(v.Gallery_path) // on .../gal
+	gameof.Game()                   // on .../game
+	home.Home()                     // on .../
+	ip.SetFlag(v.Only_local)
 
-	err := http.ListenAndServe(":8080", nil)
+	fmt.Println(gtime.GetTime(), "Listening on :", v.Port)
+
+	err := http.ListenAndServe(fmt.Sprintf(":%d", v.Port), nil)
 	assert.NoError(err, "could not start server")
 
 }

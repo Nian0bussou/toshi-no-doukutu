@@ -1,6 +1,6 @@
-const ta = document.getElementById("ta");
+const ta = document.getElementById("ta"); // ta as in (t)ext(a)rea
 
-ta.addEventListener("change", () => {
+ta.addEventListener("change", () =>  {
   console.log(
     `Text area changed, new value:\n\
     ${ta.value}`
