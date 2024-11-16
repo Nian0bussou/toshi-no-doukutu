@@ -1,11 +1,6 @@
-# 年の洞窟（ニェンのどうくつ）Nian no doukutsu
+# 年の洞窟（としのどうくつ）toshi no doukutsu
 
 Simple personal website made using a go server.
-
-- [ ] learn how git merge works
-
-Some change here
-
 # Cmd
 
 Directory containing all the go code.
