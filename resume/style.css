@@ -1,16 +1,69 @@
 body {
-  background-image: url("back.png");
+  background-image: url("back.jpg");
+  /* background-image: url("back1.png"); */
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-textarea {
-  background-color: #111;
-  color: #bbb;
-  font-size: xx-large;
-
+#div_ {
+  color: white;
+  width: max-content;
+  backdrop-filter: blur(10px) /* saturate(90%) */;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+  color: beige;
+  padding: 10px;
 }
 
+#button_ {
+  width: max-content;
+  backdrop-filter: blur(10px) /* saturate(90%) */;
+  background-color: rgba(0, 0, 0, 0.7); /* Black with 50% opacity */
+  border: 2px solid white; /* Width, style, and color */
+  padding: 1%; /* Space inside the border */
+  color: beige;
+  cursor: pointer;
+}
+
+.content1 {
+  display: none;
+  overflow: hidden;
+}
+
+.content1.open {
+  display: block;
+}
+
+.content2 {
+  display: none;
+  overflow: hidden;
+}
+
+.content2.open {
+  display: block;
+}
+
+.icon {
+  vertical-align: middle;
+  margin: 2%;
+  height: 3em;
+}
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
 .zen-maru-gothic-regular {
   font-family: "Zen Maru Gothic", serif;
   font-weight: 400;
@@ -45,18 +98,4 @@ textarea {
     rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
     rgba(44, 187, 99, 0.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
-}
-
-#gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-#gallery img {
-  width: 150px;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
