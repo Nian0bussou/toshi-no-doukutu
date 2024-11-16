@@ -20,12 +20,9 @@ Source for a Conway's game of life implementation using JS, uses Bitmap files to
 # Github page
 
 This repo is available using: 
-- README.md:
-  - https://nian0bussou.github.io/toshi-no-doukutu/
-- resume page:
-  - https://nian0bussou.github.io/toshi-no-doukutu/resume
-- game of life (is working, but is ***EXTREMELY slow***):
-  - https://nian0bussou.github.io/toshi-no-doukutu/game
+- [README.md](https://nian0bussou.github.io/toshi-no-doukutu/)
+- [resume page](https://nian0bussou.github.io/toshi-no-doukutu/resume)
+- [game of life (is working, but is ***EXTREMELY slow***)](https://nian0bussou.github.io/toshi-no-doukutu/game)
 
 I heavily suggest to start it using Go server (see Makefile)
 
