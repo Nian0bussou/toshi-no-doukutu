@@ -1,51 +1,58 @@
 body {
-  background-image: url("back.jpg");
-  /* background-image: url("back1.png"); */
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-image: url('back.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0;
+    font-size: 1.1em;
 }
 
-#div_ {
-  color: white;
-  width: max-content;
-  backdrop-filter: blur(10px) /* saturate(90%) */;
-  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
-  color: beige;
-  padding: 10px;
+.but_tits {
+    font-size: 1.2em;
 }
 
-#button_ {
-  width: max-content;
-  backdrop-filter: blur(10px) /* saturate(90%) */;
-  background-color: rgba(0, 0, 0, 0.7); /* Black with 50% opacity */
-  border: 2px solid white; /* Width, style, and color */
-  padding: 1%; /* Space inside the border */
-  color: beige;
-  cursor: pointer;
+.div_ {
+    color: white;
+    width: max-content;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: beige;
+    padding: 10px;
+}
+
+.button_ {
+    width: max-content;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid white;
+    padding: 1%;
+    color: beige;
+    cursor: pointer;
 }
 
 .content1 {
-  display: none;
-  overflow: hidden;
+    display: none;
+    overflow: hidden;
 }
 
 .content1.open {
-  display: block;
+    display: block;
 }
 
 .content2 {
-  display: none;
-  overflow: hidden;
+    display: none;
+    overflow: hidden;
 }
 
 .content2.open {
-  display: block;
+    display: block;
 }
 
 .icon {
-  vertical-align: middle;
-  margin: 2%;
-  height: 3em;
+    vertical-align: middle;
+    margin: 2%;
+    height: 3em;
 }
 
 /*
@@ -65,37 +72,38 @@ body {
 
 */
 .zen-maru-gothic-regular {
-  font-family: "Zen Maru Gothic", serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'Zen Maru Gothic', serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .button-33 {
-  background-color: #c2fbd7;
-  border-radius: 100px;
-  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
-    rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
-    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
-    rgba(44, 187, 99, 0.15) 0 16px 32px;
-  color: green;
-  cursor: pointer;
-  display: inline-block;
-  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
-  padding: 7px 20px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 250ms;
-  border: 0;
-  font-size: 16px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+    background-color: #c2fbd7;
+    border-radius: 100px;
+    box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
+        rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
+        rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
+        rgba(44, 187, 99, 0.15) 0 16px 32px;
+    color: green;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto,
+        sans-serif;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
 .button-33:hover {
-  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
-    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
-    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
-    rgba(44, 187, 99, 0.25) 0 16px 32px;
-  transform: scale(1.05) rotate(-1deg);
+    box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
+        rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
+        rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
+        rgba(44, 187, 99, 0.25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
 }

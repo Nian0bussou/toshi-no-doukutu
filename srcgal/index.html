@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <title>年の洞窟のギャラリー</title>
 
-<head>
-  <title>年の洞窟のギャラリー</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-  <link rel="stylesheet" href="style.css">
-</head>
+    <body style="color: beige; background-color: black">
+        <button
+            class="button-33"
+            role="button"
+            onclick="window.location.href='/';"
+        >
+            家庭に行け
+        </button>
 
-<body style="color: beige; background-color: black;">
-  <button class="button-33" role="button" onclick="window.location.href='/';">Go Home</button>
+        <select id="pathSelector">
+            <option value="0"></option>
+        </select>
 
-  <select id="pathSelector">
-    <option value="0"></option>
-  </select>
-
-  <button id="lib" onclick="loadImages()">Load Images</button>
-  <h1>Image Gallery</h1>
-  <div id="gallery"></div>
-  <script src="gallery.js" defer></script>
-
-</body>
-
+        <button id="lib" onclick="loadImages()">Load Images</button>
+        <h1>Image Gallery</h1>
+        <div id="gallery"></div>
+        <script src="gallery.js" defer></script>
+    </body>
 </html>

@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <title>人生のゲーム</title>
 
-<head>
-    <title>人生のゲーム</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    <body style="background-color: black">
+        <button
+            class="button-33"
+            role="button"
+            onclick="window.location.href='/';">
+            家庭に行け
+        </button>
 
-<body style="background-color: black;">
+        <input type="file" id="fileInput" accept=".bmp" style="color: white" />
 
-    <button class="button-33" role="button" onclick="window.location.href='/';">Go Home</button>
+        <br />
+        <br />
 
-    <input type="file" id="fileInput" accept=".bmp" style="color: white;">
+        <button class="button-33" role="button" id="bTogglePause">
+            Toggle Pause
+        </button>
 
-    <br>
-    <br>
+        <br />
 
-    <button class="button-33" role="button" id="bTogglePause"> Toggle Pause </button>
+        <label style="color: white"> Reset Trace : </label>
+        <input type="checkbox" id="check" />
+        <button class="button-33" role="button" id="refreshID">Refresh</button>
 
-    <br>
+        <label style="color: white"> Cell size </label>
+        <input type="range" id="sizeID" min="1" max="50" value="5" />
 
-    <label style="color: white;"> Reset Trace : </label>
-    <input type="checkbox" id="check">
-    <button class="button-33" role="button" id="refreshID"> Refresh </button>
+        <br />
+        <br />
 
-    <label style="color: white;"> Cell size </label>
-    <input type="range" id="sizeID" min="1" max="50" value="5">
+        <label style="color: white"> Pause/Unpause when Unfocus/Focus : </label>
+        <input type="checkbox" id="focuspause" checked />
 
-    <br>
-    <br>
+        <br />
 
-    <label style="color: white;"> Pause/Unpause when Unfocus/Focus : </label>
-    <input type="checkbox" id="focuspause" checked>
+        <label style="color: white"> Len of tail/trace : </label>
+        <input type="range" id="LenText" min="0" max="2048" value="512" />
 
-    <br>
+        <br />
 
-    <label style="color: white;"> Len of tail/trace : </label>
-    <input type="range" id="LenText" min="0" max="2048" value="512">
+        <label style="color: white"> Trace unaffected by pause; </label>
+        <input type="checkbox" id="tracePause" />
 
-    <br>
+        <canvas id="gameCanvas"></canvas>
 
-
-    <label style="color: white;"> Trace unaffected by pause; </label>
-    <input type="checkbox" id="tracePause">
-
-    <canvas id="gameCanvas"></canvas>
-
-    <script type="module" src="index.js"></script>
-</body>
-
+        <script type="module" src="index.js"></script>
+    </body>
 </html>
